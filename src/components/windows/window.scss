@@ -1,0 +1,118 @@
+/* Modern Developer Window Frame */
+.custom-window-frame {
+  background-color: #09090b;
+  border: 1px solid #27272a;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  overflow: hidden;
+}
+
+/* The Top Navigation Bar */
+.custom-drag-bar {
+  height: 40px;
+  background-color: #121214;
+  border-bottom: 1px solid #27272a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px 0 16px;
+  cursor: grab;
+  user-select: none;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  .window-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #a1a1aa;
+    font-size: 13px;
+    font-family: "Fira Code", monospace;
+    letter-spacing: -0.02em;
+
+    svg {
+      color: #58a6ff;
+    }
+  }
+
+  .window-controls {
+    display: flex;
+    gap: 6px;
+
+    .control-btn {
+      background: transparent;
+      border: none;
+      color: #71717a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover:not(:disabled) {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+      }
+
+      /* The sleek red hover effect for the close button */
+      &.close:hover {
+        background: rgba(239, 68, 68, 0.15);
+        color: #ef4444;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.window-content {
+  flex-grow: 1;
+  height: calc(100% - 40px);
+  cursor: default;
+  position: relative;
+}
+/* Added to the bottom of window.scss 
+   Forces the react-rnd wrapper to fill the screen
+*/
+.maximized-window {
+  transform: translate(0px, 0px) !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  top: 0 !important;
+  left: 0 !important;
+  transition:
+    transform 0.2s ease,
+    width 0.2s ease,
+    height 0.2s ease;
+}
+/* Aggressively nuke all scrollbars inside the terminal wrapper */
+.terminal-strict-wrapper {
+  height: 100%;
+  width: 100%;
+
+  * {
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important; /* IE/Edge */
+  }
+
+  *::-webkit-scrollbar {
+    display: none !important; /* Chrome/Safari */
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+  }
+}

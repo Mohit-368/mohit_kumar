@@ -1,0 +1,164 @@
+/* Sleek Markdown Editor Aesthetic */
+$bg-sidebar: #09090b;
+$bg-editor: #0d0d11;
+$border-color: #27272a;
+$text-main: #d4d4d8;
+$text-heading: #fafafa;
+$accent: #58a6ff;
+
+.obsidian-notes-app {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: $bg-editor;
+  color: $text-main;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Sidebar Styling */
+.notes-sidebar {
+  width: 220px;
+  background-color: $bg-sidebar;
+  border-right: 1px solid $border-color;
+  padding: 1rem 0;
+
+  .sidebar-header {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #71717a;
+    padding: 0 1.5rem 1rem;
+    font-weight: 600;
+  }
+
+  .file {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: #a1a1aa;
+    cursor: pointer;
+    transition:
+      background 0.2s,
+      color 0.2s;
+
+    svg {
+      opacity: 0.7;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: $text-heading;
+    }
+    &.active {
+      background-color: rgba(88, 166, 255, 0.1);
+      color: $accent;
+      border-right: 2px solid $accent;
+      svg {
+        opacity: 1;
+        stroke: $accent;
+      }
+    }
+  }
+}
+
+/* Markdown Reading View Styling */
+.notes-editor {
+  flex-grow: 1;
+  padding: 3rem 4rem;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 4px;
+  }
+
+  .markdown-body {
+    max-width: 650px;
+    margin: 0 auto;
+
+    h1,
+    h2,
+    h3 {
+      color: $text-heading;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: 2rem;
+      padding-bottom: 0.5rem;
+      margin-top: 0;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      border-bottom: 1px solid $border-color;
+      padding-bottom: 0.5rem;
+    }
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    p {
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+    }
+
+    strong {
+      color: $text-heading;
+      font-weight: 600;
+    }
+
+    a {
+      color: $accent;
+      text-decoration: none;
+      transition: opacity 0.2s;
+      &:hover {
+        text-decoration: underline;
+        opacity: 0.8;
+      }
+    }
+
+    ul,
+    ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+      font-size: 0.95rem;
+      color: #c4c4c8;
+    }
+
+    blockquote {
+      border-left: 3px solid $accent;
+      background: rgba(88, 166, 255, 0.05);
+      margin: 1.5rem 0;
+      padding: 1rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+
+      p {
+        margin: 0;
+        color: #a1a1aa;
+        font-style: italic;
+      }
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid $border-color;
+      margin: 2rem 0;
+    }
+  }
+}

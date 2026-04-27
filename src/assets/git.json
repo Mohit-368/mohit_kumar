@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Hospital-Management-System",
+    "description": "Full REST API — patient registration, appointments, role-based auth.",
+    "language": "Python",
+    "languageColor": "#3572A5",
+    "tags": ["django", "drf", "postgresql"],
+    "repoLink": "https://github.com/Mohit-368",
+    "stars": 12
+  },
+  {
+    "id": 2,
+    "title": "ReadmeForge",
+    "description": "CLI tool that auto-generates professional GitHub READMEs.",
+    "language": "Python",
+    "languageColor": "#3572A5",
+    "tags": ["cli", "github-api", "automation"],
+    "repoLink": "https://github.com/Mohit-368",
+    "stars": 24
+  },
+  {
+    "id": 3,
+    "title": "Awkward-Social-Platform",
+    "description": "Full-stack social media app with OTP auth & Django Signals.",
+    "language": "Python",
+    "languageColor": "#3572A5",
+    "tags": ["django", "sqlite", "html-css"],
+    "repoLink": "https://github.com/Mohit-368",
+    "stars": 8
+  },
+  {
+    "id": 4,
+    "title": "Career-Intelligence",
+    "description": "SQL recommendation engine using CTEs & window functions.",
+    "language": "SQL",
+    "languageColor": "#e38c00",
+    "tags": ["postgresql", "data-analysis"],
+    "repoLink": "https://github.com/Mohit-368",
+    "stars": 5
+  },
+  {
+    "id": 5,
+    "title": "Fokkus-Chrome-Extension",
+    "description": "Website blocker with focus mode & password protection.",
+    "language": "JavaScript",
+    "languageColor": "#f1e05a",
+    "tags": ["manifest-v3", "chrome-extension"],
+    "repoLink": "https://github.com/Mohit-368",
+    "stars": 15
+  },
+  {
+    "id": 6,
+    "title": "Smart-Log-Analyzer",
+    "description": "Detects error patterns & suspicious IPs in server logs.",
+    "language": "Python",
+    "languageColor": "#3572A5",
+    "tags": ["security", "automation"],
+    "repoLink": "https://github.com/Mohit-368",
+    "stars": 19
+  }
+]

@@ -1,0 +1,60 @@
+/* Fixed Desktop Widget Styling */
+.fixed-spotify-widget {
+  position: fixed;
+  bottom: 100px; /* Keeps it hovering just above your bottom dock */
+  right: 24px; /* Locks it to the right edge of the screen */
+  width: 350px;
+  background-color: #121212; /* Spotify dark mode base */
+  border-radius: 16px;
+  border: 1px solid #27272a;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  z-index: 9999; /* Ensures it stays on top of all other windows */
+
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 8px; /* Breathing room for the bottom border radius */
+
+  /* Smooth entry animation */
+  animation: slideUpFade 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.widget-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 12px 4px;
+
+  .close-widget {
+    background: transparent;
+    border: none;
+    color: #71717a;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: #ef4444; /* Subtle red on hover */
+      background-color: rgba(239, 68, 68, 0.1);
+    }
+  }
+}
+
+/* Keyframes for the pop-in effect */
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

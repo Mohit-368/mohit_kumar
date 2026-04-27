@@ -1,0 +1,36 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+
+  background-image: url(/wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+
+  overflow: hidden;
+
+  .nav {
+    display: flex;
+    justify-content: space-between; // pushes items to edges
+    align-items: center;
+  }
+}
+
+body {
+  background-color: black;
+}

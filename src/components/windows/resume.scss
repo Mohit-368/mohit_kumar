@@ -1,0 +1,13 @@
+.simple-pdf-container {
+  width: 100%;
+  height: 100%;
+  background-color: #27272a; /* Neutral dark background */
+  overflow: hidden;
+
+  .pdf-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block; /* Removes any baseline gap below the iframe */
+  }
+}
