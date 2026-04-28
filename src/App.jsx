@@ -11,7 +11,7 @@ import Resume from "./components/windows/pdf";
 import Spotify from "./components/spotify";
 import TerminalApp from "./components/windows/terminalapp";
 // IMPORT YOUR NEW COMPONENT
-import Wallpaper from "./components/windows/Wallpaper";
+import Wallpaper from "./components/windows/wallpaper";
 
 function App() {
   // NEW: State to track the current wallpaper
