@@ -78,14 +78,19 @@ const ContributionGraph = () => {
   );
 };
 
-const Github = ({ windowName, setWindowsState }) => {
+// Notice zIndex and focusWindow are destructured here!
+const Github = ({ windowName, setWindowsState, zIndex, focusWindow }) => {
   return (
     <MacWindow
       windowName={windowName}
       setWindowsState={setWindowsState}
+      // And passed in here!
+      zIndex={zIndex}
+      focusWindow={focusWindow}
       width="80vw"
       height="85vh"
     >
+      {/* The rest of your app content */}
       <div className="pro-dashboard">
         {/* Sleek Profile Header */}
         <header className="dash-header">

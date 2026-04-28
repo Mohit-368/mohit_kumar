@@ -50,17 +50,18 @@ const MacWindow = ({
   children,
   width = "75vw",
   height = "80vh",
-  minW = 600 /* Default min width */,
-  minH = 400 /* Default min height */,
-  maxW = 1400 /* Default max width */,
-  maxH = 900 /* Default max height */,
-  disableResize = false /* Toggle to completely lock the window */,
+  minW = 600,
+  minH = 400,
+  maxW = 1400,
+  maxH = 900,
+  disableResize = false,
   windowName,
   setWindowsState,
+  zIndex, // NEW PROP
+  focusWindow, // NEW PROP
 }) => {
   const [isMaximized, setIsMaximized] = useState(false);
 
-  // Disable maximize feature if the window is strictly locked
   const handleMaximize = () => {
     if (!disableResize) setIsMaximized(!isMaximized);
   };
@@ -72,12 +73,13 @@ const MacWindow = ({
 
   return (
     <Rnd
+      // NEW: Apply zIndex and click-to-focus listener
+      style={{ zIndex: zIndex }}
+      onMouseDown={() => focusWindow && focusWindow(windowName)}
       disableDragging={isMaximized}
-      // If disableResize is true, turn off all resizing handles
       enableResizing={disableResize ? false : !isMaximized}
       className={isMaximized ? "maximized-window" : ""}
       default={{ width: width, height: height, x: 100, y: 50 }}
-      // Use the new dynamic props
       minWidth={minW}
       minHeight={minH}
       maxWidth={isMaximized ? "100vw" : maxW}
@@ -109,7 +111,6 @@ const MacWindow = ({
             <button className="control-btn minimize" onClick={handleMinimize}>
               <MinimizeIcon />
             </button>
-            {/* Gray out the maximize button if resizing is disabled */}
             <button
               className="control-btn maximize"
               onClick={handleMaximize}

@@ -1,3 +1,20 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
 * {
   margin: 0%;
   padding: 0%;
@@ -11,23 +28,55 @@ body,
   width: 100%;
 }
 
+@mixin glass-pill {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
 main {
   height: 100%;
   width: 100%;
 
-  background-image: url(/wallpaper.jpg);
+  background-image: url(/x.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 
   position: relative;
-
   overflow: hidden;
 
   .nav {
     display: flex;
-    justify-content: space-between; // pushes items to edges
+    justify-content: space-between;
     align-items: center;
+    padding: 1rem 1.25rem;
+
+    /* Date widget pill */
+    .date-widget,
+    [class*="date"],
+    [class*="Dwidget"] {
+      @include glass-pill;
+      display: flex;
+      align-items: center;
+      height: 4rem;
+      padding: 0 1.25rem;
+    }
+
+    /* Time widget pill */
+    .time-widget,
+    [class*="time"],
+    [class*="Twidget"] {
+      @include glass-pill;
+      display: flex;
+      align-items: center;
+      height: 4rem;
+      padding: 0 1.25rem;
+    }
   }
 }
 

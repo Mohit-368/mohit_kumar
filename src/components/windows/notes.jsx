@@ -6,16 +6,19 @@ import MacWindow from "./MacWindow";
 import markdownString from "../../assets/notes.md?raw";
 import "./notes.scss";
 
-const Notes = ({ windowName, setWindowsState }) => {
-  // 2. Look how clean this is now! No state, no useEffect, no fetch needed.
-
+// Notice zIndex and focusWindow are destructured here!
+const Notes = ({ windowName, setWindowsState, zIndex, focusWindow }) => {
   return (
     <MacWindow
       windowName={windowName}
       setWindowsState={setWindowsState}
-      width="45vw"
-      height="70vh"
+      // And passed in here!
+      zIndex={zIndex}
+      focusWindow={focusWindow}
+      width="80vw"
+      height="85vh"
     >
+      {/* The rest of your app content */}
       <div className="obsidian-notes-app">
         <div className="notes-sidebar">
           <div className="sidebar-header">Explorer</div>

@@ -80,14 +80,19 @@ Status:    Open to remote backend internships.
   },
 };
 
-const TerminalApp = ({ windowName, setWindowsState }) => {
+// Notice zIndex and focusWindow are destructured here!
+const TerminalApp = ({ windowName, setWindowsState, zIndex, focusWindow }) => {
   return (
     <MacWindow
       windowName={windowName}
       setWindowsState={setWindowsState}
-      width="65vw"
-      height="70vh"
+      // And passed in here!
+      zIndex={zIndex}
+      focusWindow={focusWindow}
+      width="80vw"
+      height="85vh"
     >
+      {/* The rest of your app content */}
       <div className="terminal-strict-wrapper">
         <Terminal
           commands={commands}
